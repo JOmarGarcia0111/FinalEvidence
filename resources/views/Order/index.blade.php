@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
-@section('title', 'Inventory Movement List')
+@section('title', 'Order List')
 
 @section('content')
-    <h1>Inventory Movement</h1>
+    <h1>Order</h1>
 
-    <a href="{{ route('im.create') }}">
-        <button>Create New Inventory Movement</button>
+    <a href="{{ route('order.create') }}">
+        <button>Create New Order</button>
     </a>
 
     <br><br>
@@ -14,34 +14,30 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Product ID</th>
-                <th>Movement Type</th> 
-                <th>Quantity</th>
+                <th>Customer ID</th>
                 <th>User ID</th>
+                <th>Status</th>
                 <th>Actions</th> 
-        
             </tr>
         </thead>
         <tbody>
-            @foreach ($IM as $item)
+            @foreach ($order as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
-                    <td>{{ $item->Product_ID }}</td>
-                    <td>{{ $item->Movement_Type }}</td>
-                    <td>{{ $item->Quantity}}</td>
-                    <td>{{ $item->User_ID}}</td>
-
+                    <td>{{ $item->Customer_ID }}</td>
+                    <td>{{ $item->User_ID }}</td>
+                    <td>{{ $item->Status }}</td>
                     <td>
     
-                        <a href="{{ route('im.edit', $item->id) }}">
+                        <a href="{{ route('order.edit', $item->id) }}">
                             <button>Edit</button>
                         </a>
 
-                        <a href="{{ route('im.show', $item->id) }}">
+                        <a href="{{ route('order.show', $item->id) }}">
                             <button>Show</button>
                         </a>
 
-                        <form action="{{ route('im.destroy', $item->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('order.destroy', $item->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>

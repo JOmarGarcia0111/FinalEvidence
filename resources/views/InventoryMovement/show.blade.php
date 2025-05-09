@@ -11,6 +11,7 @@
     <p><strong>User ID:</strong> {{ $IM->User_ID }}</p>
     <p><strong>Created At:</strong> {{ $IM->created_at }}</p>
     <p><strong>Updated At:</strong> {{ $IM->updated_at }}</p>
+    
 
     <a href="{{ route('im.index') }}">Back to list</a>
 @endsection

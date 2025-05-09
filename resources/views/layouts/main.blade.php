@@ -8,7 +8,9 @@
    
 </head>
 <body>
-
+<a href="{{ route('dashboard') }}">
+    <button type="button">Back to Dashboard</button>
+</a>
 
     <nav>
         <ul>
@@ -16,6 +18,11 @@
             <li><a href="{{ route('category.index') }}">Category</a></li>
             <li><a href="{{ route('product.index') }}">Product</a></li>
             <li><a href="{{ route('im.index') }}">Inventory Movement</a></li>
+            <li><a href="{{ route('order.index') }}">Order</a></li>
+            <li><a href="{{ route('role.index') }}">Role</a></li>
+            <li><a href="{{ route('customer.index') }}">Customer</a></li>
+
+
             
 
         </ul>

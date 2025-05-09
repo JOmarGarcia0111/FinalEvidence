@@ -4,12 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
- 
-class Warehouse extends Model
+
+class Customer extends Model
 {
     use HasFactory;
-    protected $table = 'werehouse';
+    protected $table = 'customer';
     protected $fillable=[
-        'Name'
+        'Name',
+        'Email',
+        'Phone'
     ];
 }

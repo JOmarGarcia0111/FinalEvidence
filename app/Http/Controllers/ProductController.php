@@ -14,7 +14,7 @@ class ProductController extends Controller
         return view('product.index',compact('product'));
     }
     public function create(){
-        $WH = Warehouse::all();  
+        $customer = Customer::all();  
         $CatID = Category::all(); 
 
         return view('product.create', compact('WH', 'CatID'));

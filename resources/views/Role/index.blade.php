@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
-@section('title', 'Inventory Movement List')
+@section('title', 'Role List')
 
 @section('content')
-    <h1>Inventory Movement</h1>
+    <h1>Role</h1>
 
-    <a href="{{ route('im.create') }}">
-        <button>Create New Inventory Movement</button>
+    <a href="{{ route('role.create') }}">
+        <button>Create New Role</button>
     </a>
 
     <br><br>
@@ -14,34 +14,29 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Product ID</th>
-                <th>Movement Type</th> 
-                <th>Quantity</th>
-                <th>User ID</th>
+                <th>Name</th>
+                <th>Description</th>
                 <th>Actions</th> 
-        
             </tr>
         </thead>
         <tbody>
-            @foreach ($IM as $item)
+            @foreach ($role as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
-                    <td>{{ $item->Product_ID }}</td>
-                    <td>{{ $item->Movement_Type }}</td>
-                    <td>{{ $item->Quantity}}</td>
-                    <td>{{ $item->User_ID}}</td>
+                    <td>{{ $item->Name }}</td>
+                    <td>{{ $item->Description }}</td>
 
                     <td>
     
-                        <a href="{{ route('im.edit', $item->id) }}">
+                        <a href="{{ route('role.edit', $item->id) }}">
                             <button>Edit</button>
                         </a>
 
-                        <a href="{{ route('im.show', $item->id) }}">
+                        <a href="{{ route('role.show', $item->id) }}">
                             <button>Show</button>
                         </a>
 
-                        <form action="{{ route('im.destroy', $item->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('role.destroy', $item->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>

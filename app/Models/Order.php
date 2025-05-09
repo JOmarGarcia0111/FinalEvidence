@@ -4,12 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
- 
-class Warehouse extends Model
+
+class Order extends Model
 {
     use HasFactory;
-    protected $table = 'werehouse';
+    protected $table = 'order';
     protected $fillable=[
-        'Name'
+        'Status',
+        'User_ID',
+        'Customer_ID'
     ];
 }

@@ -3,8 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Customer;
 use App\Models\InventoryMovement;
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\Role;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Warehouse;
@@ -27,5 +30,8 @@ class DatabaseSeeder extends Seeder
         Category::factory(3)->create();
         Product::factory(30)->create();
         InventoryMovement::factory(15)->create();
+        Customer::factory(15)->create();
+        Role::factory(5)->create();
+        Order::factory(15)->create();
     }
 }
